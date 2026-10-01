@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="theme-color" content="#fff8f2">
+  <title>CODE CORE | Jornada dos Valores FIRST</title>
+  <link rel="stylesheet" href="./codecore.css">
+</head>
+<body>
+  <section class="screen splash active" id="screen-splash" aria-label="Abertura">
+    <svg class="splash-mark" viewBox="0 0 48 48" role="img" aria-label="Crianças aprendendo juntas"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="9" r="4"/><circle cx="10" cy="16" r="3.5"/><circle cx="38" cy="16" r="3.5"/><path d="M14 28a10 10 0 0 1 20 0M3 29a7 7 0 0 1 12-5M45 29a7 7 0 0 0-12-5M4 30q10-4 20 1 10-5 20-1v13q-10-4-20 1-10-5-20-1zM24 31v13"/></g></svg>
+    <p class="splash-wordmark">CODE <span>CORE</span></p>
+    <p class="splash-subtitle">Uma aventura de valores FIRST</p>
+    <p class="splash-credit">Um jogo desenvolvido por RPRT HAWKS #9459</p>
+    <div class="splash-track"><i></i></div>
+  </section>
+
+  <div id="app-shell">
+    <header class="topbar">
+      <button class="brand" data-nav="home" aria-label="Ir ao início">
+        <svg class="brand-symbol" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="9" r="4"/><circle cx="10" cy="16" r="3.5"/><circle cx="38" cy="16" r="3.5"/><path d="M14 28a10 10 0 0 1 20 0M3 29a7 7 0 0 1 12-5M45 29a7 7 0 0 0-12-5M4 30q10-4 20 1 10-5 20-1v13q-10-4-20 1-10-5-20-1zM24 31v13"/></g></svg><span>CODE <b>CORE</b></span>
+      </button>
+      <span class="team-name">RPRT HAWKS #9459</span>
+      <div class="topbar-right">
+        <div class="camera-status" id="header-cam-status"><i></i><span id="header-camera-label">Câmera desligada</span></div>
+        <div class="journey-counter" aria-label="Progresso da jornada"><span id="header-progress">0/6</span><i><b id="header-progress-fill"></b></i></div>
+        <button class="icon-button" id="btn-settings" title="Configurações" aria-label="Configurações">⚙</button>
+      </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button class="nav-btn active" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg> Início</button>
+      <button class="nav-btn" data-nav="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15m6-12v15"/></svg> Jornada</button>
+      <button class="nav-btn" data-nav="achievements"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-2.5 4.5 2.5-1-9M5 3l1.5 2M19 3l-1.5 2"/></svg> Medalhas</button>
+      <button class="nav-btn" data-nav="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></svg> Meu baú</button>
+    </nav>
+
+    <main>
+      <section class="screen" id="screen-home">
+        <div class="home-hero page-width">
+          <div class="hero-copy">
+            <p class="eyebrow">SUA AVENTURA COMEÇA AQUI</p>
+            <h1>Um mundo melhor<br>começa <span>com você.</span></h1>
+            <p class="hero-sub">Descubra, crie e faça amigos pelo caminho!</p>
+            <div class="home-progress"><div><span>Jornada</span><b id="home-progress">0 de 6 fases</b></div><i><b id="home-progress-fill"></b></i></div>
+            <button class="primary-button" id="home-continue"><span id="home-next-icon">🔎</span><span id="home-next-label">Continuar jornada</span><b>➜</b></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-sun"></div><div class="hero-hill hill-back"></div><div class="hero-hill hill-front"></div>
+            <div class="hero-friends"><span>🐻</span><span>🦊</span><span>🐸</span></div>
+          </div>
+        </div>
+        <div class="home-quick page-width">
+          <div class="quick-copy"><span class="quick-icon">✋</span><div><b>Mostre sua mão</b><span>Palma aberta para mover. Punho fechado para agir.</span></div></div>
+          <button class="text-button" data-nav="map">Ver as 6 fases <b>➜</b></button>
+        </div>
+        <div class="home-values page-width">
+          <div class="section-heading"><div><p class="eyebrow">SEIS JEITOS DE FAZER A DIFERENÇA</p><h2>O que vamos viver?</h2></div><button class="round-arrow" data-nav="map" aria-label="Ver jornada">➜</button></div>
+          <div class="value-peek" id="home-phase-peek"></div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-map">
+        <div class="map-intro page-width"><p class="eyebrow">UMA JORNADA, SEIS DESCOBERTAS</p><h1>Vamos nessa!</h1><p>Uma aventura de cada vez. Todo mundo pode chegar ao final.</p></div>
+        <div class="journey-map page-width" id="journey-map"></div>
+        <div class="journey-footer page-width"><span>DESCOBRIR <i>→</i> EXPERIMENTAR <i>→</i> AGIR <i>→</i> REFLETIR <i>→</i> APRENDER</span></div>
+      </section>
+
+      <section class="screen" id="screen-briefing">
+        <div class="briefing-wrap page-width" id="brief-card">
+          <button class="back-button" data-go="map">← Jornada</button>
+          <div class="briefing-art" id="brief-icon">🔎</div>
+          <span class="briefing-number" id="brief-number">FASE 1 DE 6</span>
+          <h1 id="brief-name">Descoberta</h1>
+          <p class="briefing-line" id="brief-line"></p>
+          <div class="briefing-action"><b id="brief-action"></b></div>
+          <button class="speak-button" id="btn-hear-brief"><span>🔊</span> Ouvir instrução</button>
+          <div class="gesture-lesson"><div><span>✋</span><b>Palma aberta</b><small>Mover</small></div><i>＋</i><div><span>✊</span><b>Punho fechado</b><small>Agir</small></div></div>
+          <button class="primary-button start-button" id="btn-begin"><span>Vamos brincar!</span><b>➜</b></button>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-gameplay">
+        <div class="game-wrap page-width">
+          <div class="game-topline"><button class="back-button" id="btn-game-map">← Pausar</button><div class="game-title-group"><span id="game-title">Descoberta</span><span class="game-progress"><b id="game-progress">0 / 4</b><i><b id="game-progress-fill"></b></i></span></div><button class="speak-button compact" id="btn-hear-hint" aria-label="Ouvir dica">🔊 Ouvir</button></div>
+          <div class="game-goal"><b id="game-goal"></b></div>
+          <div class="game-stage" id="game-stage">
+            <canvas id="game-canvas" width="900" height="540" aria-label="Cena da brincadeira"></canvas>
+            <div class="gesture-flag" id="gesture-flag"><span class="gi">✋</span><b id="gesture-text">Mover a mão</b></div>
+            <div class="camera-panel" id="cam-panel"><div class="camera-label">SUA MÃO <span id="cam-foot" class="camera-dot"></span></div><canvas id="cam-preview" width="150" height="110"></canvas></div>
+            <button class="camera-start" id="btn-activate-cam"><span>📷</span> Jogar com a mão</button>
+            <div class="game-prompt" id="game-prompt">✋ Mova a mão <span>✊</span> Interaja</div>
+            <div class="success-overlay" id="overlay-success">
+              <div class="success-spark" id="success-icon">✓</div><h2 id="success-title">Você conseguiu!</h2><p class="success-speaker" id="success-speaker" hidden>GRACIOUS</p><p id="success-reflection"></p><b class="success-reward" id="success-reward">+50 pontos</b>
+              <button class="primary-button" id="btn-next-phase"><span>Próxima aventura</span><b>➜</b></button>
+            </div>
+          </div>
+          <p class="game-help">Também dá para brincar com o toque ou o mouse. <span>Toque e segure para agir.</span></p>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-achievements">
+        <div class="simple-page page-width"><p class="eyebrow">SUAS PEQUENAS GRANDES VITÓRIAS</p><h1>Medalhas</h1><p class="page-subtitle">Cada aventura deixa uma lembrança.</p><div class="achievement-list" id="achievement-list"></div></div>
+      </section>
+
+      <section class="screen" id="screen-profile">
+        <div class="simple-page page-width"><p class="eyebrow">SEU BAÚ DE AVENTURAS</p><h1>Olha só você!</h1><div class="treasure-box"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 12h38v29H5zM3 7h42v9H3zM24 16v25M24 7c-9 0-10-7-5-7 4 0 5 7 5 7Zm0 0c9 0 10-7 5-7-4 0-5 7-5 7Z"/></svg><div><b id="profile-points">0</b><small>pontos juntados</small></div></div><div class="profile-progress"><div><span>Sua jornada</span><b id="profile-progress">0 de 6 fases</b></div><i><b id="profile-progress-fill"></b></i></div><button class="reset-button" id="btn-reset">Começar de novo</button></div>
+      </section>
+
+      <section class="screen" id="screen-finale">
+        <div class="finale-wrap page-width">
+          <div class="finale-landscape" aria-hidden="true"><span>🐻</span><span>🐰</span><span>🦊</span></div>
+          <p class="eyebrow">SUA JORNADA FIRST</p>
+          <h1>Conseguimos juntos.</h1>
+          <div class="gracious-portrait" aria-hidden="true"><span></span></div>
+          <p class="finale-name">GRACIOUS</p>
+          <p class="finale-message">Curiosidade, novas ideias e gentileza fazem a diferença.</p>
+          <button class="primary-button" id="btn-opinion"><span>Dar minha opinião</span><b>➜</b></button>
+          <button class="text-button finale-replay" id="btn-finale-replay">Rever a jornada</button>
+          <button class="text-button finale-restart" id="btn-finale-restart">Reiniciar do início</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-back" id="modal-settings">
+    <div class="settings-modal"><button class="modal-close" id="btn-close-settings" aria-label="Fechar">×</button><p class="eyebrow">DO SEU JEITO</p><h2>Configurações</h2><div class="setting-row"><span>Som das brincadeiras</span><button class="switch on" id="switch-sound" aria-label="Ativar ou desligar o som"><i></i></button></div><div class="setting-row"><span>Instruções em voz alta</span><button class="switch on" id="switch-voice" aria-label="Ativar ou desligar a voz"><i></i></button></div><div class="setting-row"><span>Fundo preto</span><button class="switch" id="switch-dark-theme" aria-label="Ativar ou desligar o fundo preto"><i></i></button></div><div class="setting-note">Câmera: <b id="settings-camera-status">desligada</b></div></div>
+  </div>
+  <div class="modal-back" id="modal-opinion" role="dialog" aria-modal="true" aria-labelledby="opinion-title">
+    <form class="settings-modal opinion-modal" id="opinion-form">
+      <button class="modal-close" type="button" id="btn-close-opinion" aria-label="Fechar">×</button>
+      <p class="eyebrow">OPINIÃO OPCIONAL</p><h2 id="opinion-title">Conta pra gente</h2>
+      <p class="privacy-note">Pode usar um apelido. Não escreva endereço, escola ou telefone.</p>
+      <label>Nome ou apelido<input name="nome" maxlength="40" autocomplete="nickname"></label>
+      <label>Idade<input name="idade" type="number" min="5" max="95" inputmode="numeric"></label>
+      <label>Você já conhecia a FIRST?<select name="conheciaFirst"><option value="">Escolha uma opção</option><option>Sim</option><option>Não</option><option>Não tenho certeza</option></select></label>
+      <label>Como foi sua experiência?<select name="experiencia"><option value="">Escolha uma opção</option><option>Foi muito legal</option><option>Foi legal</option><option>Mais ou menos</option><option>Foi difícil</option></select></label>
+      <label>O que poderia ser melhorado?<textarea name="melhoria" rows="3" maxlength="500"></textarea></label>
+      <button class="primary-button opinion-submit" type="submit"><span>Enviar opinião</span><b>➜</b></button>
+      <p class="form-status" id="opinion-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <video id="input-video" width="640" height="480" playsinline muted></video>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="./codecore.js"></script>
+</body>
+</html>
